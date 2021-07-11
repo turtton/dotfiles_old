@@ -92,6 +92,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/fzf"
   },
+  ["fzf-preview.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/fzf-preview.vim"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
   ["lsp-status.nvim"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
@@ -104,6 +112,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -129,7 +141,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Setup for: vim-table-mode
 time([[Setup for vim-table-mode]], true)
-try_loadstring("\27LJ\1\0025\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0\6|\22table_mode_corner\6g\bvim\0", "setup", "vim-table-mode")
+vim.g.table_mode_corner = '|'
 time([[Setup for vim-table-mode]], false)
 time([[packadd for vim-table-mode]], true)
 vim.cmd [[packadd vim-table-mode]]

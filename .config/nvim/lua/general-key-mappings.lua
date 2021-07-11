@@ -1,2 +1,2 @@
 -- fzf
-vim.api.nvim_set_keymap('n', '<F3>', ':FZF<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-A-f>', ':FZF<CR>', { noremap = true, silent = true })

@@ -36,17 +36,25 @@ require('packer').startup(function()
 			{'kyazdani42/nvim-web-devicons'},
 		},
 	}
+	
+	-- FileTree
+	use{
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			{'kyazdani42/nvim-web-devicons'},
+		}
+	}
 
 	-- なんかMDのテーブルをいい感じに作ってくれるやつ
 	use{
 		'dhruvasagar/vim-table-mode',
-  		setup = function()
-			vim.g.table_mode_corner = '|'
-		end,
+		setup = [[vim.g.table_mode_corner = '|']],
 	}
 	
 	-- fzf
 	use {'junegunn/fzf'}
+	use {'junegunn/fzf.vim'}
+	use {'chengzeyi/fzf-preview.vim'}
 
 end)
 
