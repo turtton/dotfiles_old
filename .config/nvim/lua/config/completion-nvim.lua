@@ -1,4 +1,8 @@
 require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach} 
+require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach} 
+require'lspconfig'.kotlin_language_server.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.nimls.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
 
 vim.api.nvim_exec(
 [[
