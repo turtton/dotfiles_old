@@ -104,6 +104,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+  },
   ["nlua.nvim"] = {
     config = { "require('config/nlua')" },
     loaded = true,
@@ -114,6 +122,7 @@ _G.packer_plugins = {
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
+    config = { "require('config/nvim-tree')" },
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -158,6 +167,10 @@ time([[Config for completion-nvim]], false)
 time([[Config for nlua.nvim]], true)
 require('config/nlua')
 time([[Config for nlua.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config/nvim-tree')
+time([[Config for nvim-tree.lua]], false)
 if should_profile then save_profiles() end
 
 end)

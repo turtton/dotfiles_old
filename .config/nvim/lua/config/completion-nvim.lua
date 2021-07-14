@@ -1,8 +1,20 @@
-require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach} 
-require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach} 
-require'lspconfig'.kotlin_language_server.setup{on_attach=require'completion'.on_attach}
-require'lspconfig'.nimls.setup{on_attach=require'completion'.on_attach}
-require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
+local global_setup = {
+	on_attach = function (client, bufnr)
+		require'completion'.on_attach()
+		require'lsp_signature'.on_attach({
+			blind = true,
+			handler_opts = {
+				border = "single"
+			}
+		})
+	end,
+}
+
+require'lspconfig'.pyright.setup(global_setup) 
+require'lspconfig'.bashls.setup(global_setup) 
+require'lspconfig'.kotlin_language_server.setup(global_setup)
+require'lspconfig'.nimls.setup(global_setup)
+require'lspconfig'.rust_analyzer.setup(global_setup)
 
 vim.api.nvim_exec(
 [[

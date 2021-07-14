@@ -14,6 +14,7 @@ require('packer').startup(function()
 	use{'nvim-lua/lsp-status.nvim'}
 	use{'nvim-lua/plenary.nvim'}
 	use{'neovim/nvim-lspconfig'}
+	use{'ray-x/lsp_signature.nvim'}
 	
 	-- LanguageServer
 	use{
@@ -40,6 +41,7 @@ require('packer').startup(function()
 	-- FileTree
 	use{
 		'kyazdani42/nvim-tree.lua',
+		config = [[require('config/nvim-tree')]],
 		requires = {
 			{'kyazdani42/nvim-web-devicons'},
 		}
@@ -49,6 +51,12 @@ require('packer').startup(function()
 	use{
 		'dhruvasagar/vim-table-mode',
 		setup = [[vim.g.table_mode_corner = '|']],
+	}
+
+	-- markdown preview
+	use{
+		'iamcco/markdown-preview.nvim',
+		run = [[sh -c 'cd app && yarn install']]
 	}
 	
 	-- fzf
