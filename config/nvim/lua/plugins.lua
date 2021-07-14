@@ -1,6 +1,7 @@
 vim.cmd[[packadd packer.nvim]]
 
 require('packer').startup(function()
+
 	use{
 		'wbthomason/packer.nvim', 
 		opt = true,
@@ -28,6 +29,12 @@ require('packer').startup(function()
 		config = [[require('config/completion-nvim')]],
 	}
 	use { 'steelsojka/completion-buffers' }
+
+	-- Treesitter
+	use{
+		'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+	}
 
 	-- 上のファイルのタブ表示
 	use{
@@ -64,6 +71,11 @@ require('packer').startup(function()
 		'kdheepak/lazygit.nvim',
 		config = [[require'config/lazygit']]
 	}	
+	use{
+		'tanvirtin/vgit.nvim',
+		config = [[require'config/vgit']],
+		requires = 'nvim-lua/plenary.nvim'
+	}
 
 	-- fzf
 	use {'junegunn/fzf'}

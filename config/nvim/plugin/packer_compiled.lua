@@ -131,6 +131,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -144,6 +148,11 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["vgit.nvim"] = {
+    config = { "require'config/vgit'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/vgit.nvim"
   },
   ["vim-table-mode"] = {
     loaded = true,
@@ -164,14 +173,18 @@ time([[packadd for vim-table-mode]], false)
 time([[Config for completion-nvim]], true)
 require('config/completion-nvim')
 time([[Config for completion-nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('config/nvim-tree')
-time([[Config for nvim-tree.lua]], false)
+-- Config for: vgit.nvim
+time([[Config for vgit.nvim]], true)
+require'config/vgit'
+time([[Config for vgit.nvim]], false)
 -- Config for: barbar.nvim
 time([[Config for barbar.nvim]], true)
 require('config/barbar')
 time([[Config for barbar.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config/nvim-tree')
+time([[Config for nvim-tree.lua]], false)
 -- Config for: nlua.nvim
 time([[Config for nlua.nvim]], true)
 require('config/nlua')
