@@ -1,7 +1,3 @@
-require'plugins'
-require'key-mappings'
-require'commands'
-
 -- auto completion --
 vim.api.nvim_set_keymap('i', '{', '{}<LEFT>', { noremap = true})
 vim.api.nvim_set_keymap('i', '[', '[]<LEFT>', { noremap = true})
@@ -10,7 +6,9 @@ vim.api.nvim_set_keymap('i', '"', '""<LEFT>', { noremap = true})
 vim.api.nvim_set_keymap('i', "'", "''<LEFT>", { noremap = true})
 
 -- settings ---
---
+
+-- mapleader
+vim.g.mapleader = " "
 -- enable reload
 vim.opt.autoread = true
 -- prevent creating swapfile and backupfile
@@ -48,3 +46,9 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 -- bind clipboard
 vim.opt.clipboard = 'unnamedplus'
+
+-- load other files
+require'plugins'
+require'key-mappings'
+require'commands'
+
