@@ -100,6 +100,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/fzf.vim"
   },
+  ["lazygit.nvim"] = {
+    config = { "require'config/lazygit'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
+  },
   ["lsp-status.nvim"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
@@ -155,22 +160,26 @@ time([[Setup for vim-table-mode]], false)
 time([[packadd for vim-table-mode]], true)
 vim.cmd [[packadd vim-table-mode]]
 time([[packadd for vim-table-mode]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-require('config/barbar')
-time([[Config for barbar.nvim]], false)
 -- Config for: completion-nvim
 time([[Config for completion-nvim]], true)
 require('config/completion-nvim')
 time([[Config for completion-nvim]], false)
--- Config for: nlua.nvim
-time([[Config for nlua.nvim]], true)
-require('config/nlua')
-time([[Config for nlua.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('config/nvim-tree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+require('config/barbar')
+time([[Config for barbar.nvim]], false)
+-- Config for: nlua.nvim
+time([[Config for nlua.nvim]], true)
+require('config/nlua')
+time([[Config for nlua.nvim]], false)
+-- Config for: lazygit.nvim
+time([[Config for lazygit.nvim]], true)
+require'config/lazygit'
+time([[Config for lazygit.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

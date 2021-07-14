@@ -58,7 +58,13 @@ require('packer').startup(function()
 		'iamcco/markdown-preview.nvim',
 		run = [[sh -c 'cd app && yarn install']]
 	}
-	
+
+	-- Git
+	use{
+		'kdheepak/lazygit.nvim',
+		config = [[require'config/lazygit']]
+	}	
+
 	-- fzf
 	use {'junegunn/fzf'}
 	use {'junegunn/fzf.vim'}
