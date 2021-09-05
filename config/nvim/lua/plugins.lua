@@ -22,13 +22,14 @@ require('packer').startup(function()
 		'tjdevries/nlua.nvim',
 		config = [[require('config/nlua')]],
 	}
-
+	use {'rust-lang/rust.vim'}
 	-- 補完
-	use{
-		'nvim-lua/completion-nvim',
-		config = [[require('config/completion-nvim')]],
-	}
-	use { 'steelsojka/completion-buffers' }
+	--use{
+	--	'nvim-lua/completion-nvim',
+	--	config = [[require('config/completion-nvim')]],
+	--}
+	--use { 'steelsojka/completion-buffers'}
+	--use { 'nvim-treesitter/completion-treesitter' }
 
 	-- Treesitter
 	use{
@@ -71,16 +72,46 @@ require('packer').startup(function()
 		'kdheepak/lazygit.nvim',
 		config = [[require'config/lazygit']]
 	}	
-	use{
-		'tanvirtin/vgit.nvim',
-		config = [[require'config/vgit']],
-		requires = 'nvim-lua/plenary.nvim'
-	}
+	--use{
+	--	'tanvirtin/vgit.nvim',
+	--	config = [[require'config/vgit']],
+	--	requires = {'nvim-lua/plenary.nvim'}
+	--}
 
 	-- fzf
 	use {'junegunn/fzf'}
 	use {'junegunn/fzf.vim'}
 	use {'chengzeyi/fzf-preview.vim'}
+
+	---- Deno ----
+	use {'vim-denops/denops.vim'}
+	-- Completion
+	use {'Shougo/ddc.vim',
+		config = [[require'config/ddc']], 
+		requires = {
+			'Shougo/ddc-nvim-lsp',
+			'Shougo/ddc-around',
+			'Shougo/ddc-nextword',
+		}
+	}
+	use {
+		'Shougo/deoppet.nvim',
+		run = ':UpdateRemotePlugins',
+		config = [[require'config/deoppet']]
+	}
+	-- brackets completion
+	use { 'higashi000/dps-kakkonan', config = [[require'config/kakkonan']]}
+
+	-- JapaneseInput
+	use { 'kuuote/denops-skkeleton.vim', config = [[require'config/skkeleton']] }
+	-- open terminal in new tab page
+	use { 'lambdalisue/guise.vim' }
+	-- open prompt on nvim when program ask user input through a job on nvim
+	use { 'lambdalisue/askpass.vim'}
+	-- handle git repository
+	use { 'lambdalisue/gin.vim'}
+	
+
 
 end)
 

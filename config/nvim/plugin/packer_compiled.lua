@@ -69,24 +69,55 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["askpass.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/askpass.vim"
+  },
   ["barbar.nvim"] = {
     config = { "require('config/barbar')" },
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
-  ["completion-buffers"] = {
-    loaded = true,
-    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/completion-buffers"
-  },
-  ["completion-nvim"] = {
-    config = { "require('config/completion-nvim')" },
-    loaded = true,
-    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/completion-nvim"
-  },
   ["dark-purple.vim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/opt/dark-purple.vim"
+  },
+  ["ddc-around"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-around"
+  },
+  ["ddc-nextword"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-nextword"
+  },
+  ["ddc-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-nvim-lsp"
+  },
+  ["ddc.vim"] = {
+    config = { "require'config/ddc'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc.vim"
+  },
+  ["denops-skkeleton.vim"] = {
+    config = { "require'config/skkeleton'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/denops-skkeleton.vim"
+  },
+  ["denops.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/denops.vim"
+  },
+  ["deoppet.nvim"] = {
+    config = { "require'config/deoppet'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/deoppet.nvim"
+  },
+  ["dps-kakkonan"] = {
+    config = { "require'config/kakkonan'" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/dps-kakkonan"
   },
   fzf = {
     loaded = true,
@@ -99,6 +130,14 @@ _G.packer_plugins = {
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  ["gin.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/gin.vim"
+  },
+  ["guise.vim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/guise.vim"
   },
   ["lazygit.nvim"] = {
     config = { "require'config/lazygit'" },
@@ -149,10 +188,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["vgit.nvim"] = {
-    config = { "require'config/vgit'" },
+  ["rust.vim"] = {
     loaded = true,
-    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/vgit.nvim"
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/rust.vim"
   },
   ["vim-table-mode"] = {
     loaded = true,
@@ -169,26 +207,34 @@ time([[Setup for vim-table-mode]], false)
 time([[packadd for vim-table-mode]], true)
 vim.cmd [[packadd vim-table-mode]]
 time([[packadd for vim-table-mode]], false)
--- Config for: completion-nvim
-time([[Config for completion-nvim]], true)
-require('config/completion-nvim')
-time([[Config for completion-nvim]], false)
--- Config for: vgit.nvim
-time([[Config for vgit.nvim]], true)
-require'config/vgit'
-time([[Config for vgit.nvim]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-require('config/barbar')
-time([[Config for barbar.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('config/nvim-tree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: ddc.vim
+time([[Config for ddc.vim]], true)
+require'config/ddc'
+time([[Config for ddc.vim]], false)
 -- Config for: nlua.nvim
 time([[Config for nlua.nvim]], true)
 require('config/nlua')
 time([[Config for nlua.nvim]], false)
+-- Config for: deoppet.nvim
+time([[Config for deoppet.nvim]], true)
+require'config/deoppet'
+time([[Config for deoppet.nvim]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+require('config/barbar')
+time([[Config for barbar.nvim]], false)
+-- Config for: dps-kakkonan
+time([[Config for dps-kakkonan]], true)
+require'config/kakkonan'
+time([[Config for dps-kakkonan]], false)
+-- Config for: denops-skkeleton.vim
+time([[Config for denops-skkeleton.vim]], true)
+require'config/skkeleton'
+time([[Config for denops-skkeleton.vim]], false)
 -- Config for: lazygit.nvim
 time([[Config for lazygit.nvim]], true)
 require'config/lazygit'

@@ -46,9 +46,36 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 -- bind clipboard
 vim.opt.clipboard = 'unnamedplus'
+-- enable spell checking'
+vim.opt.spelllang = 'en,cjk'
+function _G.SpellConf()
+vim.api.nvim_exec([[
+redir! => syntax
+silent syntax
+redir END
+
+set spell
+
+if syntax =~? '/<comment\>'
+  syntax spell default
+  syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+else
+  syntax spell toplevel
+  syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+endif
+
+syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+
+]], false)
+end
+vim.api.nvim_exec([[
+augroup spell_check
+  autocmd!
+  autocmd BufReadPost,BufNewFile,Syntax * call v:lua.SpellConf()
+augroup END
+]], false)
 
 -- load other files
 require'plugins'
 require'key-mappings'
 require'commands'
-

@@ -1,0 +1,6 @@
+vim.api.nvim_set_keymap('v', 'sr(', '<Plug>(dps_kakkkonan_surround_parenthesis)', {})
+vim.api.nvim_set_keymap('v', 'sr{', '<Plug>(dps_kakkkonan_curly)', {})
+vim.api.nvim_set_keymap('v', 'sr[', '<Plug>(dps_kakkkonan_square)', {})
+vim.api.nvim_set_keymap('v', [[sr"]], '<Plug>(dps_kakkkonan_doublequote', {})
+vim.api.nvim_set_keymap('v', [[sr']], '<Plug>(dps_kakkkonan_sinblequote)', {})
+vim.api.nvim_set_keymap('v', [[sr`]], '<Plug>(dps_kakkkonan_backquote', {})
