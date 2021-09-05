@@ -15,7 +15,8 @@ require('packer').startup(function()
 	use{'nvim-lua/lsp-status.nvim'}
 	use{'nvim-lua/plenary.nvim'}
 	use{'neovim/nvim-lspconfig'}
-	use{'ray-x/lsp_signature.nvim'}
+	--use{'ray-x/lsp_signature.nvim'}
+	use {'hrsh7th/vim-vsnip-integ', requires = 'hrsh7th/vim-vsnip'}
 	
 	-- LanguageServer
 	use{
@@ -92,12 +93,18 @@ require('packer').startup(function()
 			'Shougo/ddc-nvim-lsp',
 			'Shougo/ddc-around',
 			'Shougo/ddc-nextword',
+			'Shougo/ddc-sorter_rank'
 		}
 	}
 	use {
 		'Shougo/deoppet.nvim',
 		run = ':UpdateRemotePlugins',
 		config = [[require'config/deoppet']]
+	}
+	-- for ddc completion signature
+	use {
+		'matsui54/ddc-nvim-lsp-doc',
+		config = [[vim.fn['ddc_nvim_lsp_doc#enable']()]]
 	}
 	-- brackets completion
 	use { 'higashi000/dps-kakkonan', config = [[require'config/kakkonan']]}

@@ -95,6 +95,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-nvim-lsp"
   },
+  ["ddc-nvim-lsp-doc"] = {
+    config = { "vim.fn['ddc_nvim_lsp_doc#enable']()" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-nvim-lsp-doc"
+  },
+  ["ddc-sorter_rank"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/ddc-sorter_rank"
+  },
   ["ddc.vim"] = {
     config = { "require'config/ddc'" },
     loaded = true,
@@ -148,10 +157,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
   },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
-  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
@@ -196,6 +201,14 @@ _G.packer_plugins = {
     loaded = true,
     needs_bufread = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/opt/vim-table-mode"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 
@@ -211,10 +224,18 @@ time([[packadd for vim-table-mode]], false)
 time([[Config for nvim-tree.lua]], true)
 require('config/nvim-tree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+require('config/barbar')
+time([[Config for barbar.nvim]], false)
 -- Config for: ddc.vim
 time([[Config for ddc.vim]], true)
 require'config/ddc'
 time([[Config for ddc.vim]], false)
+-- Config for: ddc-nvim-lsp-doc
+time([[Config for ddc-nvim-lsp-doc]], true)
+vim.fn['ddc_nvim_lsp_doc#enable']()
+time([[Config for ddc-nvim-lsp-doc]], false)
 -- Config for: nlua.nvim
 time([[Config for nlua.nvim]], true)
 require('config/nlua')
@@ -223,10 +244,6 @@ time([[Config for nlua.nvim]], false)
 time([[Config for deoppet.nvim]], true)
 require'config/deoppet'
 time([[Config for deoppet.nvim]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-require('config/barbar')
-time([[Config for barbar.nvim]], false)
 -- Config for: dps-kakkonan
 time([[Config for dps-kakkonan]], true)
 require'config/kakkonan'

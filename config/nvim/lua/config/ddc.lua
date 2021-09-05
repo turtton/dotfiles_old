@@ -8,16 +8,14 @@ vim.fn['ddc#custom#patch_global']('sources', {'nvimlsp', 'around', 'nextword', '
 vim.fn['ddc#custom#patch_global']('sourceOptions', {
 	_ = {
 		nvimlsp = {mark = 'lsp', forceCompletionPattern = [[.|:|->]] },
-		 around =  { matchers = {'matcher_head'}, mark = 'A'},
+		around =  { matchers = {'matcher_head'}, mark = 'A'},
 		nextword = { mark = 'nextword', minAutoCompleteLength = 3, isVolatile = true},
-		deoppet = { dup = true, mark = 'dp'}
-	}
+		deoppet = { dup = true, mark = 'dp'},
+		sorters = { 'sorter_rank' }
+	},
+	nvimlsp = { kindLabels = { Class = 'c' } },
+	around = { maxSize = 500},
 })
---" Change source options
-vim.fn['ddc#custom#patch_global']('sourceOptions', {
-       nvimlsp = { kindLabels = { Class = 'c' } },
-			 around = { maxSize = 500},
-      })
 
 -- Mappings
 vim.api.nvim_set_keymap('i', '<TAB>',
