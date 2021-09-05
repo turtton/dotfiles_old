@@ -13,17 +13,30 @@ require('packer').startup(function()
 
 	-- LSP関連
 	use{'nvim-lua/lsp-status.nvim'}
-	use{'nvim-lua/plenary.nvim'}
-	use{'neovim/nvim-lspconfig'}
+	use{ 
+		'neovim/nvim-lspconfig',
+		config = [[require'config/lspconfig']],
+		requires = {
+			{ 
+				'simrat39/rust-tools.nvim',
+				config = [[require'rust-tools'.setup({})]],
+				requires = {
+					{'nvim-lua/popup.nvim'},
+					{'nvim-lua/plenary.nvim'},
+					{'nvim-telescope/telescope.nvim'},
+					{'mfussenegger/nvim-dap'},
+				}
+		},
+		{ 
+			'tjdevries/nlua.nvim',
+			config = [[require('config/nlua')]],
+		}}
+	}
+	use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+
 	--use{'ray-x/lsp_signature.nvim'}
 	use {'hrsh7th/vim-vsnip-integ', requires = 'hrsh7th/vim-vsnip'}
 	
-	-- LanguageServer
-	use{
-		'tjdevries/nlua.nvim',
-		config = [[require('config/nlua')]],
-	}
-	use {'rust-lang/rust.vim'}
 	-- 補完
 	--use{
 	--	'nvim-lua/completion-nvim',

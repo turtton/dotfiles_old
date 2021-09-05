@@ -78,6 +78,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  ["crates.nvim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/crates.nvim"
+  },
   ["dark-purple.vim"] = {
     loaded = false,
     needs_bufread = false,
@@ -166,7 +170,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nlua.nvim"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
+    config = { "require'config/lspconfig'" },
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
@@ -193,9 +202,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/watagame/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["rust.vim"] = {
+  ["popup.nvim"] = {
     loaded = true,
-    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/rust.vim"
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    config = { "require'rust-tools'.setup({})" },
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/rust-tools.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/watagame/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-table-mode"] = {
     loaded = true,
@@ -220,10 +238,14 @@ time([[Setup for vim-table-mode]], false)
 time([[packadd for vim-table-mode]], true)
 vim.cmd [[packadd vim-table-mode]]
 time([[packadd for vim-table-mode]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('config/nvim-tree')
-time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require'config/lspconfig'
+time([[Config for nvim-lspconfig]], false)
+-- Config for: denops-skkeleton.vim
+time([[Config for denops-skkeleton.vim]], true)
+require'config/skkeleton'
+time([[Config for denops-skkeleton.vim]], false)
 -- Config for: barbar.nvim
 time([[Config for barbar.nvim]], true)
 require('config/barbar')
@@ -244,14 +266,18 @@ time([[Config for nlua.nvim]], false)
 time([[Config for deoppet.nvim]], true)
 require'config/deoppet'
 time([[Config for deoppet.nvim]], false)
+-- Config for: rust-tools.nvim
+time([[Config for rust-tools.nvim]], true)
+require'rust-tools'.setup({})
+time([[Config for rust-tools.nvim]], false)
 -- Config for: dps-kakkonan
 time([[Config for dps-kakkonan]], true)
 require'config/kakkonan'
 time([[Config for dps-kakkonan]], false)
--- Config for: denops-skkeleton.vim
-time([[Config for denops-skkeleton.vim]], true)
-require'config/skkeleton'
-time([[Config for denops-skkeleton.vim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config/nvim-tree')
+time([[Config for nvim-tree.lua]], false)
 -- Config for: lazygit.nvim
 time([[Config for lazygit.nvim]], true)
 require'config/lazygit'

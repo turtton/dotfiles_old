@@ -1,7 +1,7 @@
 --" Customize global settings
 --" Use around source.
 --" https://github.com/Shougo/ddc-around
-vim.fn['ddc#custom#patch_global']('sources', {'nvimlsp', 'around', 'nextword', 'deoppet'})
+vim.fn['ddc#custom#patch_global']('sources', {'nvimlsp', 'around', 'nextword', 'deoppet', 'crates'})
 --" Use matcher_head and sorter_rank.
 --" https://github.com/Shougo/ddc-matcher_head
 --" https://github.com/Shougo/ddc-sorter_rank
